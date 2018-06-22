@@ -1,71 +1,49 @@
 // global variables
 var counter = 0;
 var timer = 30;
+var wrongCounter = 0;
+var rightCounter = 0;
+var totalQuestions = 3;
 // questions and your answers
 var questions = [
     {
         "question": "Will Lebron James go to the Lakers?",
         "choices": ["true", "false"],
         "correctAns": "true",
-        "image": ""
+        "image": "assets/images/lebronlakers.jpg"
     },
     {
         "question": "The L.A. Lakers colors are purple and gold.",
         "choices": ["true", "false"],
         "correctAns": "true",
-        "images": ""
+        "images": "assets/images/nbalogo.jpg"
     },
     {
         "question": "The Clippers will it all in 2019.",
         "choices": ["true", "false"],
         "correctAns": "false",
-        "images": ""
+        "images": "assets/images/laclippers.png"
     }
+    
 
 ];
 
-function getQuestion() {
+document.getElementById("questions-container").innerHTML = questions.join(" ");
+
+//Generate the questions to show on screen
+function pullQuestion() {
     $("#questions-container").html(
-        "<p>" + questions[counter].question + "</p>"
-        "<img src=" + questions[counter].image + ">" +
-        "<button class='choice-btn' value=" + questions[counter].choice[0] + ">true</button>" +
-        "<button class='choice-btn' value=" + questions[counter].choice[0] + ">false</button>" +
+        "<p>" + questions[counter].question + "</p>"+
+        "<img src="+questions[counter].image+">"+
+        "<button class='btn btn-primary' value=" + questions[counter].choice[0] + ">true</button>" +
+        "<button class='btn btn-secondary' value=" + questions[counter].choice[0] + ">false</button>" 
     )
 }
 
-getQuestion();
+pullQuestion();
 
 
-//“start of the game”
-
-//Click on start.
-
-// timer starts
-$("#start").on("click", function () {
-    console.log("jquery click click!!")
-
-    var newBtn = $('<button>')
-    console.log('newBTN', newBtn)
-    //  newBtn.text('New Button')
-    //  console.log(newBtn)
-    //  $('#second').apend(newBtn)
-})
-
-// gameplay
-//when question is answered counter goes up
-
-// game ends
-//end game - something else happens
-correct++
-wrong++
-alert(correct + wrong)
-
-//Add an event listener
-
-//Timer starts to answer questions
-
-//Generate the questions to show on screen
-$(document).on("click", ".choice-btn", function () {
+$(document).on("click", ".btn btn-primary", function () {
     if ($(this).val() === questions[counter].correctAns) {
         alert("Correct!");
         counter++;
@@ -92,6 +70,37 @@ var timerId = setInterval(function () {
         $("#timer").text("GAME OVER!");
     }
 }, 30000);
+
+
+
+//“start of the game”
+
+//Click on start.
+
+// timer starts
+// $("#start").on("click", function () {
+//     console.log("jquery click click!!")
+
+    // var newBtn = $('<button>')
+    // console.log('newBTN', newBtn)
+    //  newBtn.text('New Button')
+    //  console.log(newBtn)
+    //  $('#second').apend(newBtn)
+// })
+
+//gameplay
+//when question is answered counter goes up
+
+// game ends
+//end game - something else happens
+// correct++
+// wrong++
+// alert(correct + wrong)
+
+//Add an event listener
+
+//Timer starts to answer questions
+
 
 //“Game play”
 

@@ -1,19 +1,31 @@
-body  {
-    background-repeat: no-repeat;
-    background-size: cover;
+h1 {
+    padding: 40px;
+    border: 2px solid black;
+    text-align: center;
 }
 
-.carousel {
-    padding-bottom: 25px;
-    
+.title {
+   padding: 10px;    
 }
 
-.footer {
-    background-color: rgb(29, 119, 221);
-    
+.navbar {
+    background-color: linear-gradient rgb(218, 209, 209);
 }
 
-.fcolor {
-    padding-top: 20px;
+.container {
+    padding: 20px;
+    font-family: cursive;
 }
 
+body {
+    background: linear-gradient(rgb(218, 209, 209), rgb(39, 130, 167)); 
+}
+
+.title {
+    font-size: 30px;
+    font-family: cursive;
+}
+
+.button {
+    text-align: center;
+}
