@@ -1,34 +1,37 @@
 // global variables
 var counter = 0;
+var unanswered = 0;
 var timer = 30;
-var wrongCounter = 0;
-var rightCounter = 0;
+var wrongAns = 0;
+var rightAns = 0;
 var totalQuestions = 3;
 // questions and your answers
 var questions = [
     {
         "question": "Will Lebron James go to the Lakers?",
-        "choices": ["true", "false"],
+        "choices": [true, false],
         "correctAns": "true",
         "image": "assets/images/lebronlakers.jpg"
     },
     {
         "question": "The L.A. Lakers colors are purple and gold.",
-        "choices": ["true", "false"],
+        "choices": [true, false],
         "correctAns": "true",
         "images": "assets/images/nbalogo.jpg"
     },
     {
         "question": "The Clippers will it all in 2019.",
-        "choices": ["true", "false"],
+        "choices": [true, false],
         "correctAns": "false",
         "images": "assets/images/laclippers.png"
     }
-    
-
+        
 ];
+console.log(questions);
+console.log(questions[0]);
+console.log(questions[0].question);
+$("#questions-container").append("<h1>"+ questions[0].question +"</h1>");
 
-document.getElementById("questions-container").innerHTML = questions.join(" ");
 
 //Generate the questions to show on screen
 function pullQuestion() {
